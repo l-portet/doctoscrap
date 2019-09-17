@@ -10,7 +10,7 @@
 
   // Setting all up
   hooks.beforeSetup();
-  const browser = await pup.launch({ headless: true });
+  const browser = await pup.launch({ headless: false });
   let data = [];
   let page = await setup(browser, data);
   hooks.afterSetup();

@@ -1,5 +1,5 @@
 module.exports = {
-  search: {
+  query: {
     type: 'medecin-generaliste',
     location: 'brest'
   }

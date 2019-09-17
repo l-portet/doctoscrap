@@ -3,9 +3,11 @@ const config = require('../config');
 
 module.exports = async function run(page) {
   // URL template => https://www.doctolib.fr/${type}/${location}
-  hooks.beforeRun();
+  await page.goto(
+    `https://www.doctolib.fr/${config.query.type}/${config.query.location}`
+  );
 
-  await page.goto(`https://www.doctolib.fr/${config.search.type}/${config.search.location}`);
+  hooks.beforeRun();
   let isLastPage = false;
   let nbPages = 0;
 
@@ -24,7 +26,7 @@ module.exports = async function run(page) {
       let isAtBottom = false;
       let scrolling = setInterval(async () => {
         isAtBottom = await page.evaluate(() => {
-          window.scrollTo(0, window.scrollY + 290);
+          window.scrollTo(0, window.scrollY + 700);
           return (
             document.body.offsetHeight === window.scrollY + window.innerHeight
           );
@@ -35,7 +37,7 @@ module.exports = async function run(page) {
 
           resolve(!res);
         }
-      }, 1000);
+      }, 150);
     });
   }
 

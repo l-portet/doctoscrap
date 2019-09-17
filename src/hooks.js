@@ -15,11 +15,13 @@ module.exports = function() {
     },
     beforeRun() {
       spins.scraping.start();
+      // console.time('timer');
     },
     onPaginate(nbPages) {
       spins.scraping.text = `Scraped ${nbPages} pages (may take a while, grab a beer)`;
     },
     afterRun() {
+      // console.timeEnd('timer');
       spins.scraping.succeed();
     },
     beforeClose() {
