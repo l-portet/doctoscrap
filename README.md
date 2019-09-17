@@ -26,7 +26,8 @@ npm start
 ```
 
 ## 🔧 Todo
-- Increase speed
+- Secure scraping according to network speed
+- Enhance data format
 
 ## 🐞 Issues
 If you find an issue, feel free to contact me or open an issue on github. You can also contribute by creating a pull request.
