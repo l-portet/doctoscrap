@@ -15,7 +15,6 @@ module.exports = async function run(page) {
     isLastPage = await scrollPage();
     nbPages++;
     hooks.onPaginate(nbPages);
-    isLastPage = true;
   }
 
   hooks.afterRun();
