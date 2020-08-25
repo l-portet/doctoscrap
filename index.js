@@ -19,6 +19,6 @@
   page = await run(page);
 
   hooks.beforeClose();
-  close(browser, data);
+  await close(browser, data);
   hooks.afterClose(data);
 })();

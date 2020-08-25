@@ -1,7 +1,7 @@
-module.exports = function close(browser, data) {
+module.exports = async function close(browser, data) {
   const fs = require('fs');
 
-  browser.close();
+  await browser.close();
 
   let fileContent = JSON.stringify(data);
 
